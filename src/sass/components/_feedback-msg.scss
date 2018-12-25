@@ -1,0 +1,9 @@
+.feedback-msg {
+  align-items: center;
+  background-color: rgba($primary-color-light, .5);
+  color: $grey-dark-3;
+  display: flex;
+  font-size: $font-size-md;
+  height: 4rem;
+  justify-content: center;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "credere-webapp",
+  "version": "1.0.0",
+  "description": "credere-webapp - Version build without JS frameworks",
+  "main": "gulpfile.js",
+  "repository": "credere-webapp",
+  "scripts": {
+    "gulp": "gulp",
+    "build": "gulp default",
+    "test": "xdg-open tests/SpecRunner.html",
+    "test:w": "gulp test-w",
+    "start": "gulp server"
+  },
+  "author": "jefferson desouza",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.26.3",
+    "chai": "^4.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csslint": "^1.0.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-html-replace": "^1.5.4",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-less": "^3.0.3",
+    "gulp-mocha": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^1.4.1",
+    "gulp-usemin": "^0.3.14",
+    "gulplog": "^1.0.0",
+    "jshint-stylish": "^2.2.1",
+    "node-sass": "^4.11.0",
+    "sinon": "^7.2.2"
+  }
+}

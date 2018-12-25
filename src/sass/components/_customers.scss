@@ -1,0 +1,17 @@
+.customers-block {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 20vh;
+  justify-content: space-between;
+}
+
+.customers {
+  &__item {
+    padding: 2rem 3rem;
+    background-color: $white;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 2px 5px $grey-dark-3;
+    border-radius: 3px;
+  }
+}

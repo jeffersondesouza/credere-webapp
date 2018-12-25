@@ -1,0 +1,16 @@
+.header {
+  background: $secondary-color;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  @include respond(tab) {
+    justify-content: flex-start;
+  }
+  &__brand {
+    width: 10rem;
+    height: 4.3rem;
+  }
+  &__brand-img {
+    width: 100%;
+  }
+}

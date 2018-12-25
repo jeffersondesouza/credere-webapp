@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Credere</title>
+
+  <link rel="stylesheet" href="css/styles.min.css"/>
+
+</head>
+
+<body>
+
+  <header>
+
+  </header>
+
+  <section>
+    <form id="form-view">
+
+      <input id="id" name="id" hidden type="text" name="name">
+
+      <fieldset>
+        <legend>Cliente</legend>
+        <div>
+          <label for="">Nome</label>
+          <input id="name" type="text" name="name">
+          <p id="nameValidation" hidden class="feedback-error">Por favro, informe seu nome</p>
+        </div>
+        <div>
+          <label for="">Data de Nascimento</label>
+          <input id="birthday" type="date" name="birthday">
+          <p id="birthdayValidation" hidden class="feedback-error">Por favor, informe sua data de nascimento</p>
+        </div>
+        <div>
+          <label for="">Carteira de Motorista (Obrigatporio para maiores de idade)</label>
+          <input id="licenseId" name="licenseId" hidden type="text">
+          <input id="licenseDate" type="text" name="licenseDate">
+          <input id="licenseIssueAt" type="text" name="licenseIssueAt">
+          <input id="licenseDestroy" type="checkbox" name="licenseDestroy">
+          <p id="licenseValidation" hidden class="feedback-error">Por favor informe os dados de Sua Ccarteira de
+            Motorista</p>
+
+        </div>
+
+        <div>
+          <label for="">Estado</label>
+          <input id="state" type="text" name="state">
+          <p id="stateValidation" hidden class="feedback-error">Por favor, informe seu estado</p>
+        </div>
+
+
+        <div>
+          <label for="">Cidade</label>
+          <input id="city" type="text" name="city">
+          <p id="cityValidation" hidden class="feedback-error">Se você Potiguar e sua Licença começa com 6 por favor
+            informe sua Cidade</p>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Contatos</legend>
+        <div>
+          <label for="">Telefones</label>
+          <ul id="phones">
+
+          </ul>
+          <p id="minPhoneValidation" hidden class="feedback-error">Por favor, informe pelo menos um telefone</p>
+          <p id="maxPhoneValidation" hidden class="feedback-error">Você pode cadastrar no máxio 4 (quatro) telefones</p>
+          <p id="phoneValidation" hidden class="feedback-error">Informe o DDD e numeros para todos os telefones</p>
+          <button type="button" id="addMorePhonesBtn">Adiconar Mais</button>
+        </div>
+
+        <div>
+          <label for="">Emails</label>
+          <ul id="emails"> </ul>
+          <p id="minEmailValidation" hidden class="feedback-error">Por favor, informe pelo menos um email</p>
+          <p id="maxEmailValidation" hidden class="feedback-error">Você pode cadastrar no máxio 3 (três) emails</p>
+          <button type="button" id="addMoreEmailBtn">Adiconar Mais</button>
+        </div>
+      </fieldset>
+
+
+      <fieldset id="parent">
+        <legend>Responsável (Obrigatório para menores de idade)</legend>
+        <input id="parentId" hidden type="text" name="parentId">
+        <div id="parent">
+          <label for="">Nome</label>
+          <input id="parentName" type="text" name="city">
+          <p id="parentNameValidation" hidden class="feedback-error">Por favor, informe o nome do seu responsável
+            legal</p>
+        </div>
+        <div id="parent">
+          <label for="">Telefone</label>
+          <input id="parentPhoneId" hidden type="text" name="parentPhoneId">
+          <input id="parentPhoneCode" type="text" name="parentPhoneCode">
+          <input id="parentPhoneNumber" type="text" name="parentPhoneNumber">
+          <p id="parentPhoneValidation" hidden class="feedback-error">Por favor, informe corretamente o telefone
+            responsável legal</p>
+
+        </div>
+        <input id="parentDestroy" type="checkbox" name="parentDestroy">
+
+      </fieldset>
+
+
+
+      <div>
+        <button type="button">Cancel</button>
+        <span>or</span>
+        <button type="submit">Save</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="customers-view"></section>
+
+
+  <script src="js/bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+.emails {
+  &__item {
+    align-items: center;
+    display: flex;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  &__item-remove {
+    position: relative;
+    order: 1;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    width: 0;
+    &::after {
+      content: 'X';
+      font-weight: 900;
+      color: $red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+    }
+  }
+  &__item-remove:checked,
+  &__item-remove:checked+.input {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
