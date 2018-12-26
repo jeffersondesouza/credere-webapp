@@ -2,6 +2,9 @@
   &__item {
     margin-bottom: 1rem;
     @include abs-midle-aling;
+    @include respond(big-phone) {
+      justify-content: space-between;
+    }
   }
   &__remove-check {
     position: relative;
@@ -33,6 +36,9 @@
 .phone {
   display: flex;
   align-items: center;
+  @include respond(md-phone) {
+    flex: 1;
+  }
   &__code {
     width: 5rem;
     margin-right: .5rem;
@@ -46,6 +52,10 @@
     display: flex;
     font-size: 1.2rem;
     margin-left: 1.5rem;
+    @include respond(big-phone) {
+      margin-right: 4rem;
+      margin-left: 2rem;
+    }
   }
   &__radio {
     position: relative;
@@ -57,10 +67,10 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
       border-radius: 50%;
-      border: 2.5px solid $primary-color;
+      border: 2px solid $primary-color;
     }
   }
   &__radio:checked {
@@ -71,8 +81,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 1rem;
-      height: 1rem;
+      width: .75rem;
+      height: .75rem;
       border-radius: 50%;
       background-color: $primary-color;
     }

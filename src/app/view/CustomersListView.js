@@ -52,6 +52,25 @@ const CustomersListView = ((viewSelector) => {
 
   }
 
+  function isLicenseExpired() {
+
+  }
+
+
+  function phoneNumber(phones) {
+    const mainPhone = phones.find(phone => phone.main) || phones[0];
+    return `(${mainPhone.code})-${mainPhone.number}`;
+  }
+
+  function email(emails) {
+    const mainEmail = emails.find(email => email.main) || emails[0];
+    return mainEmail.address;
+  }
+
+  function location(city, state) {
+    return `${city ? city : 'cidade não informada' },&nbsp;${state}`
+  }
+
   function template(model, msg) {
 
     if (model.error) {
@@ -67,13 +86,36 @@ const CustomersListView = ((viewSelector) => {
         }); */
 
 
+
+    console.log('customer', model[0]);
     return (`
       <ul class="customers">${model.map(customer => `
-        <li class="customers__item" id={${customer.id}}>
-          ${customer.name}
-          <button class="btn btn--icon" type="button" name="edit" value="${customer.id}"><i class="icon-pencil"></i></button>
-          <button class="btn btn--icon" type="button" name="delete" value="${customer.id}"><i class="icon-trash"></i></button>
-        </li>
+        <li class="customer" id={${customer.id}}>
+          <div class="customer__info">
+            <header class="customer__header">
+              <h3 class="customer__title">${customer.name}</h3>
+              <div class="customer__licence">
+                ${customer.driver_license ? (`
+                  <p title="licença"><i class="icon-address-card-o customer__licence-icon"></i>${customer.driver_license ? (customer.driver_license.number) : ''}</p>
+                  <p title="Data de Emissão"><i class="icon-calendar-empty customer__licence-icon"></i>${customer.driver_license ? (customer.driver_license.issued_at) : ''}</p>  
+                `): ''}
+              </div>    
+            </header>
+            <div class="customer__contact">
+              <div class="customer__contact-header">
+                <p class="customer__contact-phone"><i class="icon-phone"></i>${phoneNumber(customer.phones)}</p>
+                <p class="customer__contact-email"><i class="icon-mail"></i>${email(customer.emails)}</p>
+              </div>
+              <p class="customer__contact-location"><i class="icon-location "></i>${location(customer.city, customer.state)}</p>            
+            </div>
+          </div>
+
+          <div class="customer__actions">
+            <button class="btn btn--round btn--icon btn--edit" type="button" name="edit" value="${customer.id}"><i class="icon-pencil"></i></button>
+            <button class="btn btn--round btn--icon btn--danger" type="button" name="delete" value="${customer.id}"><i class="icon-trash"></i></button>
+          </div>
+
+          </li>
       `).join('')}</ul>
     `);
 
