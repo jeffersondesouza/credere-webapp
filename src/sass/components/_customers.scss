@@ -14,4 +14,28 @@
     box-shadow: 0px 2px 5px $grey-dark-3;
     border-radius: 3px;
   }
+  &__expired-icon {
+    font-size: $font-size-sm;
+    color: $red;
+  }
+}
+
+.customer {
+  padding: 2rem 3rem;
+  background-color: $white;
+  margin-bottom: 1.5rem;
+  box-shadow: 0px 2px 5px $grey-dark-3;
+  border-radius: 3px;
+  font-size: $font-size-md;
+  &__header {
+    border-bottom: 1px solid $secondary-color;
+  }
+  &__title {
+    font-size: $font-size-default;
+  }
+  &__licence {}
+  &__licence-icon {
+    margin-right: .5rem;
+    font-size: $font-size-sm;
+  }
 }

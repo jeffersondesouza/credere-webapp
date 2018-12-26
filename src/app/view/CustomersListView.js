@@ -52,6 +52,25 @@ const CustomersListView = ((viewSelector) => {
 
   }
 
+  function isLicenseExpired() {
+
+  }
+
+
+  function phoneNumber(phones) {
+    const mainPhone = phones.find(phone => phone.main) || phones[0];
+    return `(${mainPhone.code})-${mainPhone.number}`;
+  }
+
+  function email(emails) {
+    const mainEmail = emails.find(email => email.main) || emails[0];
+    return mainEmail.address;
+  }
+
+  function location(city, state) {
+    return `${city ? city : 'cidade não informada' },&nbsp;${state}`
+  }
+
   function template(model, msg) {
 
     if (model.error) {
@@ -67,10 +86,28 @@ const CustomersListView = ((viewSelector) => {
         }); */
 
 
+
+    console.log('customer', model[0]);
     return (`
       <ul class="customers">${model.map(customer => `
-        <li class="customers__item" id={${customer.id}}>
-          ${customer.name}
+        <li class="customer" id={${customer.id}}>
+          <header class="customer__header">
+            <h3 class="customer__title">${customer.name}</h3>
+            <div class="customers__licence">
+              ${
+      customer.driver_license ? (`
+                  <p title="licença"><i class="icon-address-card-o customer__licence-icon"></i>${customer.driver_license ? (customer.driver_license.number) : ''}</p>
+                  <p title="Data de Emissão"><i class="icon-calendar-empty customer__licence-icon"></i>${customer.driver_license ? (customer.driver_license.issued_at) : ''}</p>  
+                `)
+        : ''
+      }
+            </div>    
+          </header>
+          <div>
+            <p title="licença"><i class="icon-phone"></i>${phoneNumber(customer.phones)}</p>
+            <p title="licença"><i class="icon-mail"></i>${email(customer.emails)}</p>
+            <p title="licença"><i class="icon-location "></i>${location(customer.city, customer.state)}</p>            
+          </div>
           <button class="btn btn--icon" type="button" name="edit" value="${customer.id}"><i class="icon-pencil"></i></button>
           <button class="btn btn--icon" type="button" name="delete" value="${customer.id}"><i class="icon-trash"></i></button>
         </li>
