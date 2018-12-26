@@ -1269,16 +1269,38 @@ body {
   color: #EF5350; }
 
 .customer {
-  padding: 2rem 3rem;
   background-color: #fff;
-  margin-bottom: 1.5rem;
   box-shadow: 0px 2px 5px #333;
   border-radius: 3px;
-  font-size: 1.4rem; }
+  padding: 2rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  display: flex; }
+  .customer__info {
+    flex: 1; }
   .customer__header {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #454c66; }
   .customer__title {
     font-size: 1.6rem; }
+  .customer__licence {
+    display: flex;
+    justify-content: space-between; }
   .customer__licence-icon {
     margin-right: .5rem;
     font-size: 1rem; }
+  .customer__contact {
+    display: flex;
+    flex-direction: column; }
+  .customer__contact-header {
+    display: flex;
+    flex-direction: column; }
+  .customer__contact-phone, .customer__contact-email, .customer__contact-location {
+    display: flex;
+    align-items: center; }
+  .customer__actions {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }

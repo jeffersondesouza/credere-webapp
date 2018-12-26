@@ -21,21 +21,50 @@
 }
 
 .customer {
-  padding: 2rem 3rem;
   background-color: $white;
-  margin-bottom: 1.5rem;
   box-shadow: 0px 2px 5px $grey-dark-3;
   border-radius: 3px;
+  padding: 2rem 1rem;
+  margin-bottom: 1.5rem;
   font-size: $font-size-md;
+  display: flex;
+  &__info {
+    flex: 1;
+  }
   &__header {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid $secondary-color;
   }
   &__title {
     font-size: $font-size-default;
   }
-  &__licence {}
+  &__licence {
+    display: flex;
+    justify-content: space-between;
+  }
   &__licence-icon {
     margin-right: .5rem;
     font-size: $font-size-sm;
+  }
+  &__contact {
+    display: flex;
+    flex-direction: column;
+  }
+  &__contact-header {
+    display: flex;
+    flex-direction: column;
+  }
+  &__contact-phone,
+  &__contact-email,
+  &__contact-location {
+    display: flex;
+    align-items: center;
+  }
+  &__actions {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 }

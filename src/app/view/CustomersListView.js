@@ -91,26 +91,31 @@ const CustomersListView = ((viewSelector) => {
     return (`
       <ul class="customers">${model.map(customer => `
         <li class="customer" id={${customer.id}}>
-          <header class="customer__header">
-            <h3 class="customer__title">${customer.name}</h3>
-            <div class="customers__licence">
-              ${
-      customer.driver_license ? (`
+          <div class="customer__info">
+            <header class="customer__header">
+              <h3 class="customer__title">${customer.name}</h3>
+              <div class="customer__licence">
+                ${customer.driver_license ? (`
                   <p title="licença"><i class="icon-address-card-o customer__licence-icon"></i>${customer.driver_license ? (customer.driver_license.number) : ''}</p>
                   <p title="Data de Emissão"><i class="icon-calendar-empty customer__licence-icon"></i>${customer.driver_license ? (customer.driver_license.issued_at) : ''}</p>  
-                `)
-        : ''
-      }
-            </div>    
-          </header>
-          <div>
-            <p title="licença"><i class="icon-phone"></i>${phoneNumber(customer.phones)}</p>
-            <p title="licença"><i class="icon-mail"></i>${email(customer.emails)}</p>
-            <p title="licença"><i class="icon-location "></i>${location(customer.city, customer.state)}</p>            
+                `): ''}
+              </div>    
+            </header>
+            <div class="customer__contact">
+              <div class="customer__contact-header">
+                <p class="customer__contact-phone"><i class="icon-phone"></i>${phoneNumber(customer.phones)}</p>
+                <p class="customer__contact-email"><i class="icon-mail"></i>${email(customer.emails)}</p>
+              </div>
+              <p class="customer__contact-location"><i class="icon-location "></i>${location(customer.city, customer.state)}</p>            
+            </div>
           </div>
-          <button class="btn btn--round btn--icon btn--edit" type="button" name="edit" value="${customer.id}"><i class="icon-pencil"></i></button>
-          <button class="btn btn--round btn--icon btn--danger" type="button" name="delete" value="${customer.id}"><i class="icon-trash"></i></button>
-        </li>
+
+          <div class="customer__actions">
+            <button class="btn btn--round btn--icon btn--edit" type="button" name="edit" value="${customer.id}"><i class="icon-pencil"></i></button>
+            <button class="btn btn--round btn--icon btn--danger" type="button" name="delete" value="${customer.id}"><i class="icon-trash"></i></button>
+          </div>
+
+          </li>
       `).join('')}</ul>
     `);
 
