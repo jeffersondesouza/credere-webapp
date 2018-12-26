@@ -1277,6 +1277,9 @@ body {
   font-size: 1.4rem;
   display: flex;
   flex-direction: column; }
+  @media only screen and (min-width: 31.25em) {
+    .customer {
+      flex-direction: row; } }
   .customer__info {
     flex: 1;
     margin-bottom: 1.5rem; }
@@ -1310,3 +1313,9 @@ body {
     margin-left: 1rem;
     display: flex;
     justify-content: space-around; }
+    @media only screen and (min-width: 31.25em) {
+      .customer__actions {
+        flex-direction: row;
+        flex: 0 0 15rem;
+        justify-content: space-evenly;
+        align-items: center; } }
