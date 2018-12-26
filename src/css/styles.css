@@ -58,7 +58,6 @@ body {
   font-size: 1.4rem; }
 
 [class^="icon-"] {
-  color: #777;
   font-size: 1.5rem; }
 
 /*
@@ -1027,33 +1026,6 @@ body {
 .label-explain {
   display: inline-block; }
 
-.btn {
-  background: #4ec498;
-  border: 0;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  outline: 0;
-  padding: 1.5rem;
-  text-transform: uppercase;
-  transition: all 0.3 ease;
-  cursor: pointer; }
-  .btn--block {
-    width: 100%; }
-  .btn--icon-label input[type=checkbox] {
-    display: none; }
-  .btn--icon-label [class^="icon-"] {
-    font-size: 2.5rem; }
-  .btn--icon {
-    color: #777;
-    background-color: transparent;
-    font-size: 1rem;
-    padding-left: 0; }
-  .btn--add {
-    color: #4ec498 !important; }
-    .btn--add [class^="icon-"] {
-      color: #4ec498 !important; }
-
 @keyframes spinner {
   0% {
     content: '\f251'; }
@@ -1128,6 +1100,50 @@ body {
   .register__feedback--success {
     color: #4ec498; }
 
+.btn {
+  background: #4ec498;
+  border: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  outline: 0;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  transition: all 0.3 ease;
+  cursor: pointer; }
+  .btn--block {
+    width: 100%; }
+  .btn--icon-label input[type=checkbox] {
+    display: none; }
+  .btn--icon-label [class^="icon-"] {
+    font-size: 2.5rem; }
+  .btn--icon {
+    background-color: transparent;
+    font-size: 1rem;
+    padding-left: 0; }
+  .btn--round {
+    border-radius: 100rem;
+    background-color: #eee;
+    height: 4rem;
+    margin: 0;
+    padding: 0;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .btn--round [class^="icon-"] {
+      font-size: 2rem; }
+  .btn--edit {
+    background-color: #4ec498; }
+    .btn--edit:hover {
+      background-color: #00936a; }
+  .btn--danger {
+    background-color: #EF5350; }
+    .btn--danger:hover {
+      background-color: #b61827; }
+  .btn--add {
+    color: #4ec498 !important; }
+
 .feedback-msg {
   align-items: center;
   background-color: rgba(131, 247, 201, 0.5);
@@ -1190,10 +1206,10 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
       border-radius: 50%;
-      border: 2.5px solid #4ec498; }
+      border: 2px solid #4ec498; }
   .phone__radio:checked {
     position: relative; }
     .phone__radio:checked::after {
@@ -1202,8 +1218,8 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 1rem;
-      height: 1rem;
+      width: .75rem;
+      height: .75rem;
       border-radius: 50%;
       background-color: #4ec498; }
 

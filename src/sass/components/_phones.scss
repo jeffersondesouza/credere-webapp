@@ -57,10 +57,10 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
       border-radius: 50%;
-      border: 2.5px solid $primary-color;
+      border: 2px solid $primary-color;
     }
   }
   &__radio:checked {
@@ -71,8 +71,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 1rem;
-      height: 1rem;
+      width: .75rem;
+      height: .75rem;
       border-radius: 50%;
       background-color: $primary-color;
     }

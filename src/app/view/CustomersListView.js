@@ -108,8 +108,8 @@ const CustomersListView = ((viewSelector) => {
             <p title="licença"><i class="icon-mail"></i>${email(customer.emails)}</p>
             <p title="licença"><i class="icon-location "></i>${location(customer.city, customer.state)}</p>            
           </div>
-          <button class="btn btn--icon" type="button" name="edit" value="${customer.id}"><i class="icon-pencil"></i></button>
-          <button class="btn btn--icon" type="button" name="delete" value="${customer.id}"><i class="icon-trash"></i></button>
+          <button class="btn btn--round btn--icon btn--edit" type="button" name="edit" value="${customer.id}"><i class="icon-pencil"></i></button>
+          <button class="btn btn--round btn--icon btn--danger" type="button" name="delete" value="${customer.id}"><i class="icon-trash"></i></button>
         </li>
       `).join('')}</ul>
     `);
