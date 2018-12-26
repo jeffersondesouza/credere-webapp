@@ -3,7 +3,8 @@
   padding: 1rem;
   display: flex;
   justify-content: center;
-  @include respond(tab) {
+  @include respond(big-phone) {
+    padding-left: 3rem;
     justify-content: flex-start;
   }
   &__brand {

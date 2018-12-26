@@ -18,7 +18,7 @@
       @include respond(big-phone) {
         clip-path: polygon(50% 0, 100% 0, 100% 100%, 35% 100%, 25% 70%);
       }
-      @include respond(tab) {
+      @include respond(big-phone) {
         clip-path: polygon(50% 0, 100% 0, 100% 100%, 5% 100%);
       }
     }

@@ -968,7 +968,7 @@ body {
         @media only screen and (min-width: 37.5em) {
           .main-block::before {
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 35% 100%, 25% 70%); } }
-        @media only screen and (min-width: 48em) {
+        @media only screen and (min-width: 37.5em) {
           .main-block::before {
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 5% 100%); } } }
 
@@ -977,8 +977,9 @@ body {
   padding: 1rem;
   display: flex;
   justify-content: center; }
-  @media only screen and (min-width: 48em) {
+  @media only screen and (min-width: 37.5em) {
     .header {
+      padding-left: 3rem;
       justify-content: flex-start; } }
   .header__brand {
     width: 10rem;
@@ -988,6 +989,9 @@ body {
 
 .form {
   font-size: 1.4rem; }
+  @media only screen and (min-width: 37.5em) {
+    .form {
+      padding: 0 5rem; } }
 
 .form-group {
   margin-bottom: 2rem; }
@@ -1057,6 +1061,8 @@ body {
 
 .form-license {
   display: flex; }
+  .form-license__inputs {
+    flex: 1; }
   .form-license__delete {
     display: flex;
     justify-content: center;
@@ -1065,6 +1071,9 @@ body {
 
 .form-parent {
   display: flex; }
+  @media only screen and (min-width: 26em) {
+    .form-parent__inputs {
+      flex: 1; } }
   .form-parent__delete {
     display: flex;
     justify-content: center;
@@ -1081,6 +1090,9 @@ body {
   margin-bottom: 3rem;
   padding-bottom: 3rem;
   width: 95%; }
+  @media only screen and (min-width: 37.5em) {
+    .register {
+      width: 70%; } }
   .register__header {
     background: #00936a;
     color: #fff;
@@ -1113,6 +1125,9 @@ body {
   cursor: pointer; }
   .btn--block {
     width: 100%; }
+    @media only screen and (min-width: 31.25em) {
+      .btn--block {
+        width: 20rem; } }
   .btn--icon-label input[type=checkbox] {
     display: none; }
   .btn--icon-label [class^="icon-"] {
@@ -1158,6 +1173,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media only screen and (min-width: 37.5em) {
+    .phones__item {
+      justify-content: space-between; } }
 
 .phones__remove-check {
   position: relative;
@@ -1185,6 +1203,9 @@ body {
 .phone {
   display: flex;
   align-items: center; }
+  @media only screen and (min-width: 26em) {
+    .phone {
+      flex: 1; } }
   .phone__code {
     width: 5rem;
     margin-right: .5rem; }
@@ -1196,6 +1217,10 @@ body {
     display: flex;
     font-size: 1.2rem;
     margin-left: 1.5rem; }
+    @media only screen and (min-width: 37.5em) {
+      .phone__main-phone {
+        margin-right: 4rem;
+        margin-left: 2rem; } }
   .phone__radio {
     position: relative;
     width: 0;
@@ -1255,7 +1280,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 20vh;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin: 0 auto; }
+  @media only screen and (min-width: 37.5em) {
+    .customers-block {
+      width: 70%; } }
 
 .customers__item {
   padding: 2rem 3rem;
@@ -1279,14 +1308,15 @@ body {
   flex-direction: column; }
   @media only screen and (min-width: 31.25em) {
     .customer {
-      flex-direction: row; } }
+      flex-direction: row;
+      padding: 2rem 0 2rem 2rem; } }
   .customer__info {
     flex: 1;
     margin-bottom: 1.5rem; }
   .customer__header {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid #454c66;
+    border-bottom: 1px solid rgba(69, 76, 102, 0.2);
     padding-bottom: .5rem;
     margin-bottom: 1rem;
     font-size: 1rem; }
@@ -1315,7 +1345,8 @@ body {
     justify-content: space-around; }
     @media only screen and (min-width: 31.25em) {
       .customer__actions {
+        margin-left: 0;
         flex-direction: row;
         flex: 0 0 15rem;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center; } }

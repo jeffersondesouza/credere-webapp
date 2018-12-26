@@ -8,6 +8,9 @@
   margin-bottom: 3rem;
   padding-bottom: 3rem;
   width: 95%;
+  @include respond(big-phone) {
+    width: 70%;
+  }
   &__header {
     background: $primary-color-dark;
     color: $white;

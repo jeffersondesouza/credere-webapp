@@ -1,5 +1,8 @@
 .form {
   font-size: $font-size-md;
+  @include respond(big-phone) {
+    padding: 0 5rem;
+  }
 }
 
 .form-group {
@@ -48,7 +51,6 @@
   display: inline-block;
 }
 
-
 @keyframes spinner {
   0% {
     content: '\f251'
@@ -91,6 +93,9 @@
 
 .form-license {
   display: flex;
+  &__inputs {
+    flex: 1;
+  }
   &__delete {
     @include abs-midle-aling;
     margin-left: 2rem;
@@ -99,6 +104,11 @@
 
 .form-parent {
   display: flex;
+  &__inputs {
+    @include respond(md-phone) {
+      flex: 1;
+    }
+  }
   &__delete {
     @include abs-midle-aling;
     margin-left: 2rem;

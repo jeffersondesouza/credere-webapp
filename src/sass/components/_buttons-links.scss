@@ -11,6 +11,9 @@
   cursor: pointer;
   &--block {
     width: 100%;
+    @include respond(phone) {
+      width: 20rem;
+    }
   }
   &--icon-label {
     input[type=checkbox] {
