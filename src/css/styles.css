@@ -1275,15 +1275,21 @@ body {
   padding: 2rem 1rem;
   margin-bottom: 1.5rem;
   font-size: 1.4rem;
-  display: flex; }
+  display: flex;
+  flex-direction: column; }
   .customer__info {
-    flex: 1; }
+    flex: 1;
+    margin-bottom: 1.5rem; }
   .customer__header {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid #454c66; }
+    border-bottom: 1px solid #454c66;
+    padding-bottom: .5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem; }
   .customer__title {
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    margin-bottom: 1rem; }
   .customer__licence {
     display: flex;
     justify-content: space-between; }
@@ -1298,9 +1304,9 @@ body {
     flex-direction: column; }
   .customer__contact-phone, .customer__contact-email, .customer__contact-location {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: .5rem; }
   .customer__actions {
     margin-left: 1rem;
     display: flex;
-    flex-direction: column;
     justify-content: space-around; }
