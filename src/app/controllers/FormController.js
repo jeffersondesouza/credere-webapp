@@ -5,7 +5,6 @@ const FormController = ((formViewSelector) => {
 
   const formModel = Form(formViewSelector);
 
-  onInit();
 
   function onInit() {
     CustomerFormHelper.addPhoneInput(formModel.phonesEl);
@@ -35,7 +34,7 @@ const FormController = ((formViewSelector) => {
     return CustomerFormValidator(formModel).validateForm();
   }
 
-  
+
   function reset(editingUser) {
     if (editingUser) {
       CustomerFormHelper.resetFormBasedOn(formModel, editingUser)
@@ -44,10 +43,16 @@ const FormController = ((formViewSelector) => {
     }
   }
 
-  return Object.create({
-    getFormValue,
-    reset,
-    onSubmit
-  });
+  function buildFormObject() {
+    onInit();
+
+    return Object.create({
+      getFormValue,
+      reset,
+      onSubmit
+    });
+  }
+
+  return buildFormObject();
 
 });

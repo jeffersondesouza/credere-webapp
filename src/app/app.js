@@ -1,12 +1,12 @@
 (function () {
 
-
-  const customerController = CustomerController();
-
   const appViewController = AppViewController({
     formController: FormController('#form-view'),
     customersView: document.querySelector('#customers-view')
   });
+
+  const customerController = CustomerController();
+
 
   appViewController
     .onInit(customerController.getAllCustomers);
