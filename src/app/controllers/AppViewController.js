@@ -1,4 +1,4 @@
-const AppViewController = (({formController, customersView}) => {
+const AppViewController = (({ formController, customersListController }) => {
 
   function onInit(callback) {
     callback();
@@ -7,30 +7,24 @@ const AppViewController = (({formController, customersView}) => {
 
   function onSubmit(submitCallback) {
     return formController.onSubmit(formValue => {
-        submitCallback(formValue)
-          .then(() => formController.reset());
-      });
+      submitCallback(formValue)
+        .then(() => formController.reset());
+    });
   }
 
 
-  function onDelete(cb) {
-    return customersView.addEventListener('click', e => {
-      if (e.target.type === 'button' && e.target.name === 'delete') {
-        const consfirmAction = confirm('Tem certeza que deseja excluir o usuário?');
-        if (consfirmAction) {
-          cb(e.target.value);
-        }
-      }
-    })
+  function onDelete(deleteCustomerFn) {
+    return customersListController.onDelete((userId) => {
+      deleteCustomerFn(userId);
+    });
   }
+
 
   function onSendToEdit(getUserFn) {
-    return customersView.addEventListener('click', e => {
-      if (e.target.type === 'button' && e.target.name === 'edit') {
-        const editingUser = getUserFn(e.target.value);
-        formController.reset(editingUser);
-      }
-    })
+    return customersListController.onSendToEdit(customerId => {
+      const editingUser = getUserFn(customerId);
+      formController.reset(editingUser);
+    });
   }
 
   return Object.create({

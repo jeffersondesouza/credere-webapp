@@ -2,9 +2,10 @@
 
   const appViewController = AppViewController({
     formController: FormController('#form-view'),
-    customersView: document.querySelector('#customers-view')
+    customersListController:CustomersListController('#customers-view')
   });
 
+  
   const customerController = CustomerController();
 
 
