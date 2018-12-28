@@ -6,50 +6,33 @@ const CustomersListView = ((viewSelector) => {
       return;
     }
 
-    const cutomersEl = model.map(customer => {
+    const customersList = model.map(customer => {
 
-      const name = DomElement({
-        tag: 'span',
-        content: customer.name,
-      });
-
-      const btnDelete = DomElement({
-        tag: 'span',
+      const customerInfoWrapper = DomElement({
+        tag: 'div',
+        content: [CustumerHeader(customer), CustumerContacts(customer)],
         attributes: {
-          type: 'button',
-          name: 'delete',
-          value: customer.id,
+          class: "customer__info"
         },
-        content: 'Deletar'
-      });
-
-      const btnEdit = DomElement({
-        tag: 'span',
-        attributes: {
-          type: 'button',
-          name: 'edit',
-          value: customer.id,
-        },
-        content: 'Editar'
       });
 
       const li = DomElement({
         tag: 'li',
-        attributes: { id: customer.id, class: 'customers__item' },
-        content: [name, CustumerContacts(customer), CustumerActions(customer.id)]
+        attributes: { id: customer.id, class: 'customer' },
+        content: [customerInfoWrapper, CustumerActions(customer.id)]
       });
 
       return li;
     });
 
-    return cutomersEl;
+    return customersList;
 
   }
 
 
- 
 
-  
+
+
 
   function template(model, msg) {
 
