@@ -24,11 +24,6 @@ const DateConverter = (() => {
     return (actualYear - year) >= minYears;
   }
 
-
-  
-
-
-
   return Object.create({
     toDateInputFormat,
     toServerFormat,
