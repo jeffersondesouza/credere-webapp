@@ -52,23 +52,28 @@ const CustomersListView = ((viewSelector) => {
 
   }
 
-  function isLicenseExpired() {
-
-  }
-
 
   function phoneNumber(phones) {
+    if (!phones || !phones.length) {
+      return 'Nenhum telefone cadastrado';
+    }
     const mainPhone = phones.find(phone => phone.main) || phones[0];
+    
     return `(${mainPhone.code})-${mainPhone.number}`;
   }
 
   function email(emails) {
+    
+    if (!emails || !emails.length) {
+      return 'Nenhum email cadastrado';
+    }
+
     const mainEmail = emails.find(email => email.main) || emails[0];
     return mainEmail.address;
   }
 
   function location(city, state) {
-    return `${city ? city : 'cidade não informada' },&nbsp;${state}`
+    return `${city ? city : 'cidade não informada'},&nbsp;${state}`
   }
 
   function template(model, msg) {
@@ -79,15 +84,14 @@ const CustomersListView = ((viewSelector) => {
       return (`<p>Nenhum Cliente Cadastrado</p>`)
     }
 
-    /*     const ul = DomElement({
-          tag: 'ul',
-          attributes: { class: 'customers' },
-          content: buildList(model)
-        }); */
+    const ul = DomElement({
+      tag: 'ul',
+      attributes: { class: 'customers' },
+      content: buildList(model)
+    });
 
 
 
-    console.log('customer', model[0]);
     return (`
       <ul class="customers">${model.map(customer => `
         <li class="customer" id={${customer.id}}>
@@ -98,7 +102,7 @@ const CustomersListView = ((viewSelector) => {
                 ${customer.driver_license ? (`
                   <p title="licença"><i class="icon-address-card-o customer__licence-icon"></i>${customer.driver_license ? (customer.driver_license.number) : ''}</p>
                   <p title="Data de Emissão"><i class="icon-calendar-empty customer__licence-icon"></i>${customer.driver_license ? (customer.driver_license.issued_at) : ''}</p>  
-                `): ''}
+                `) : ''}
               </div>    
             </header>
             <div class="customer__contact">
