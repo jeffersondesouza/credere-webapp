@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
   <title>Credere</title>
 
   <link rel="stylesheet" href="css/styles.min.css"/>
@@ -13,114 +16,179 @@
 
 <body>
 
-  <header>
+  <main class="main-block">
+    <header class="header">
+      <figure class="header__brand">
+        <img class="header__brand-img" src="assets/img/credere-logo.png" alt="" srcset="">
+      </figure>
+    </header>
 
-  </header>
+    <section class="register">
+      <header class="register__header">
+        <h2>Casdastro de Clientes</h2>
+      </header>
+      <div class="register__body">
 
-  <section>
-    <form id="form-view">
-
-      <input id="id" name="id" hidden type="text" name="name">
-
-      <fieldset>
-        <legend>Cliente</legend>
-        <div>
-          <label for="">Nome</label>
-          <input id="name" type="text" name="name">
-          <p id="nameValidation" hidden class="feedback-error">Por favro, informe seu nome</p>
-        </div>
-        <div>
-          <label for="">Data de Nascimento</label>
-          <input id="birthday" type="date" name="birthday">
-          <p id="birthdayValidation" hidden class="feedback-error">Por favor, informe sua data de nascimento</p>
-        </div>
-        <div>
-          <label for="">Carteira de Motorista (Obrigatporio para maiores de idade)</label>
-          <input id="licenseId" name="licenseId" hidden type="text">
-          <input id="licenseDate" type="text" name="licenseDate">
-          <input id="licenseIssueAt" type="text" name="licenseIssueAt">
-          <input id="licenseDestroy" type="checkbox" name="licenseDestroy">
-          <p id="licenseValidation" hidden class="feedback-error">Por favor informe os dados de Sua Ccarteira de
-            Motorista</p>
-
-        </div>
-
-        <div>
-          <label for="">Estado</label>
-          <input id="state" type="text" name="state">
-          <p id="stateValidation" hidden class="feedback-error">Por favor, informe seu estado</p>
-        </div>
-
-
-        <div>
-          <label for="">Cidade</label>
-          <input id="city" type="text" name="city">
-          <p id="cityValidation" hidden class="feedback-error">Se você Potiguar e sua Licença começa com 6 por favor
-            informe sua Cidade</p>
-        </div>
-
-      </fieldset>
-
-      <fieldset>
-        <legend>Contatos</legend>
-        <div>
-          <label for="">Telefones</label>
-          <ul id="phones">
-
-          </ul>
-          <p id="minPhoneValidation" hidden class="feedback-error">Por favor, informe pelo menos um telefone</p>
-          <p id="maxPhoneValidation" hidden class="feedback-error">Você pode cadastrar no máxio 4 (quatro) telefones</p>
-          <p id="phoneValidation" hidden class="feedback-error">Informe o DDD e numeros para todos os telefones</p>
-          <button type="button" id="addMorePhonesBtn">Adiconar Mais</button>
-        </div>
-
-        <div>
-          <label for="">Emails</label>
-          <ul id="emails"> </ul>
-          <p id="minEmailValidation" hidden class="feedback-error">Por favor, informe pelo menos um email</p>
-          <p id="maxEmailValidation" hidden class="feedback-error">Você pode cadastrar no máxio 3 (três) emails</p>
-          <button type="button" id="addMoreEmailBtn">Adiconar Mais</button>
-        </div>
-      </fieldset>
-
-
-      <fieldset id="parent">
-        <legend>Responsável (Obrigatório para menores de idade)</legend>
-        <input id="parentId" hidden type="text" name="parentId">
-        <div id="parent">
-          <label for="">Nome</label>
-          <input id="parentName" type="text" name="city">
-          <p id="parentNameValidation" hidden class="feedback-error">Por favor, informe o nome do seu responsável
-            legal</p>
-        </div>
-        <div id="parent">
-          <label for="">Telefone</label>
-          <input id="parentPhoneId" hidden type="text" name="parentPhoneId">
-          <input id="parentPhoneCode" type="text" name="parentPhoneCode">
-          <input id="parentPhoneNumber" type="text" name="parentPhoneNumber">
-          <p id="parentPhoneValidation" hidden class="feedback-error">Por favor, informe corretamente o telefone
-            responsável legal</p>
-
-        </div>
-        <input id="parentDestroy" type="checkbox" name="parentDestroy">
-
-      </fieldset>
+        <div id="customer-crud-msg-view" class="register__feedback register__feedback--success"></div>
 
 
 
-      <div>
-        <button type="button">Cancel</button>
-        <span>or</span>
-        <button type="submit">Save</button>
+        <form id="form-view" class="form">
+          <input id="id" name="id" hidden type="text" name="name">
+
+          <fieldset class="fieldset">
+            <legend class="legend">Cliente</legend>
+            <div class="form-group">
+              <label for="">Nome</label>
+              <input class="input" id="name" type="text" name="name">
+              <p id="nameValidation" hidden class="feedback-error">Por favro, informe seu nome</p>
+            </div>
+            <div class="form-group">
+              <label for="">Data de Nascimento</label>
+              <input class="input" id="birthday" type="date" name="birthday">
+              <p id="birthdayValidation" hidden class="feedback-error">Por favor, informe sua data de nascimento</p>
+            </div>
+
+            <div class="form-group">
+              <label for="">Estado</label>
+              <input class="input" id="state" type="text" name="state">
+              <p id="stateValidation" hidden class="feedback-error">Por favor, informe seu estado</p>
+            </div>
+
+
+            <div class="form-group">
+              <label for="">Cidade</label>
+              <input class="input" id="city" type="text" name="city">
+              <p id="cityValidation" hidden class="feedback-error">
+                Se você Potiguar e sua Licença começa com 6 por favor informe sua Cidade
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend class="legend">
+              <div class="legend__title">Carteira de Motorista</div>
+              <div class="legend__subtitle">(Obrigatporio para maiores de idade)</div>
+            </legend>
+
+            <div class="form-license">
+              <div class="form-license__inputs">
+                <div class="form-group">
+                  <label for="">Número</label>
+                  <input class="input" id="licenseId" name="licenseId" hidden type="text">
+                  <input class="input" id="licenseDate" type="text" name="licenseDate">
+                </div>
+                <div class="form-group">
+                  <label for="">Data de Emissão</label>
+                  <input class="input" id="licenseIssueAt" type="text" name="licenseIssueAt">
+                </div>
+              </div>
+              <div class="form-license__delete">
+                <label class="btn--icon-label">
+                  <input id="licenseDestroy" type="checkbox" name="licenseDestroy">
+                  <i class="icon-trash icon--danger"></i>
+                </label>
+              </div>
+              <p id="licenseValidation" hidden class="feedback-error">
+                Por favor informe os dados de Sua Ccarteira de Motorista
+              </p>
+            </div>
+          </fieldset>
+
+
+          <fieldset class="fieldset">
+            <legend class="legend">Contatos</legend>
+            <div class="form-group">
+              <label for="">Telefones</label>
+              <ul id="phones"></ul>
+              <p id="minPhoneValidation" hidden class="feedback-error">
+                Por favor, informe pelo menos um telefone
+              </p>
+              <p id="maxPhoneValidation" hidden class="feedback-error">
+                Você pode cadastrar no máxio 4 (quatro) telefones
+              </p>
+              <p id="phoneValidation" hidden class="feedback-error">Informe o DDD e numeros para todos os telefones</p>
+
+
+              <button id="addMorePhonesBtn" class="btn btn--icon btn--add" type="button">
+                <i class="icon-plus"></i>
+                Adiconar Mais
+              </button>
+
+            </div>
+
+            <div class="form-group">
+              <label for="">Emails</label>
+              <ul id="emails"> </ul>
+              <p id="minEmailValidation" hidden class="feedback-error">Por favor, informe pelo menos um email</p>
+              <p id="maxEmailValidation" hidden class="feedback-error">Você pode cadastrar no máxio 3 (três) emails</p>
+
+              <button id="addMoreEmailBtn" class="btn btn--icon btn--add" type="button">
+                <i class="icon-plus"></i>
+                Adiconar Mais
+              </button>
+
+            </div>
+          </fieldset>
+
+
+          <fieldset class="fieldset" id="parent">
+            <legend class="legend">
+              <div class="legend__title">Responsável </div>
+              <div class="legend__subtitle">(Obrigatório para menores de idade)</div>
+            </legend>
+
+            <div class="form-parent">
+              <div class="form-parent__inputs">
+                <input class="input" id="parentId" hidden type="text" name="parentId">
+                <div id="parent" class="form-group">
+                  <label for="">Nome</label>
+                  <input class="input" id="parentName" type="text" name="city">
+                  <p id="parentNameValidation" hidden class="feedback-error">Por favor, informe o nome do seu
+                    responsável
+                    legal</p>
+                </div>
+                <div id="parent" class="form-group">
+                  <label for="">Telefone</label>
+                  <div class="phone">
+                    <input class="input" id="parentPhoneId" hidden type="text" name="parentPhoneId">
+                    <input id="parentPhoneCode" class="input phone__code" placeholder="88" />
+                    <input id="parentPhoneNumber" class="input phone__number" placeholder="8899-7766" />
+                  </div>
+                  <p id="parentPhoneValidation" hidden class="feedback-error">
+                    Por favor, informe corretamente o telefone responsável legal
+                  </p>
+                </div>
+              </div>
+              <div class="form-parent__delete">
+                <label class="btn--icon-label ">
+                  <input id="licenseDestroy" type="checkbox" name="parentDestroy">
+                  <i class="icon-trash icon--danger"></i>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-action">
+            <button class="btn btn--block" type="submit">Salvar Cliente</button>
+          </div>
+        </form>
+
+
+
+
       </div>
-    </form>
-  </section>
+    </section>
 
-  <section id="customers-view"></section>
+    <section id="customers-view" class="customers-block"></section>
+  </main>
 
 
   <script src="js/bundle.min.js"></script>
 
+
 </body>
 
 </html>
+
+

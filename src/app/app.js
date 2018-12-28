@@ -3,7 +3,10 @@
 
   const customerController = CustomerController();
 
-  const appViewController = AppViewController(FormController('#form-view'), document.querySelector('#customers-view'));
+  const appViewController = AppViewController({
+    formController: FormController('#form-view'),
+    customersView: document.querySelector('#customers-view')
+  });
 
   appViewController
     .onInit(customerController.getAllCustomers);

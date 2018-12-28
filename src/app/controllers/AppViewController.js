@@ -1,4 +1,4 @@
-const AppViewController = ((formController, customersView) => {
+const AppViewController = (({formController, customersView}) => {
 
   function onInit(callback) {
     callback();
