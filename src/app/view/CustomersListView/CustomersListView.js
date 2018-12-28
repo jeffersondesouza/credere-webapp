@@ -36,7 +36,7 @@ const CustomersListView = ((viewSelector) => {
       const li = DomElement({
         tag: 'li',
         attributes: { id: customer.id, class: 'customers__item' },
-        content: [name, CustumerActions(customer.id)]
+        content: [name, CustumerContacts(customer), CustumerActions(customer.id)]
       });
 
       return li;
@@ -47,28 +47,9 @@ const CustomersListView = ((viewSelector) => {
   }
 
 
-  function phoneNumber(phones) {
-    if (!phones || !phones.length) {
-      return 'Nenhum telefone cadastrado';
-    }
-    const mainPhone = phones.find(phone => phone.main) || phones[0];
+ 
 
-    return `(${mainPhone.code})-${mainPhone.number}`;
-  }
-
-  function email(emails) {
-
-    if (!emails || !emails.length) {
-      return 'Nenhum email cadastrado';
-    }
-
-    const mainEmail = emails.find(email => email.main) || emails[0];
-    return mainEmail.address;
-  }
-
-  function location(city, state) {
-    return `${city ? city : 'cidade não informada'},&nbsp;${state}`
-  }
+  
 
   function template(model, msg) {
 

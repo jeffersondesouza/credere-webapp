@@ -28,11 +28,7 @@ const AppViewController = ((formController, customersView) => {
 
 
     return customersView.addEventListener('click', e => {
-      console.log('e.target.name', e.target);
-      console.log('e.target.type', e.target.name);
-      console.log('value', e.target.value);
-
-      if (e.target.name === 'edit') {
+      if (e.target.type === 'button' && e.target.name === 'edit') {
         const editingUser = getUserFn(e.target.value);
         formController.reset(editingUser);
       }
