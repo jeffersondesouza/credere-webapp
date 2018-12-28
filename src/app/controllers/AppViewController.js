@@ -25,8 +25,14 @@ const AppViewController = ((formController, customersView) => {
   }
 
   function onSendToEdit(getUserFn) {
+
+
     return customersView.addEventListener('click', e => {
-      if (e.target.type === 'button' && e.target.name === 'edit') {
+      console.log('e.target.name', e.target);
+      console.log('e.target.type', e.target.name);
+      console.log('value', e.target.value);
+
+      if (e.target.name === 'edit') {
         const editingUser = getUserFn(e.target.value);
         formController.reset(editingUser);
       }

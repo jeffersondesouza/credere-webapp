@@ -7,7 +7,13 @@ const ObserverView = ((viewSelector) => {
   domElement = document.querySelector(viewSelector);
 
   function update(model) {
-    this.domElement.innerHTML = this.template(model);
+
+    const firstChild = this.domElement.firstChild;
+    if (firstChild) {
+      this.domElement.replaceChild(this.template(model), firstChild);
+    } else {
+      this.domElement.appendChild(this.template(model));
+    }
   }
 
   function template(model, msg) {

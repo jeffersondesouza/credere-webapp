@@ -81,7 +81,11 @@ const CustomerFormHelper = (() => {
       formModel.parentPhoneIdEl.value = editingUser.parent.phone.id;
       formModel.parentPhoneCodeEl.value = editingUser.parent.phone.code;
       formModel.parentPhoneNumberEl.value = editingUser.parent.phone.number;
-      formModel.parentDestroyEl.checked = false;
+      
+      if(formModel.parentDestroyEl){
+        formModel.parentDestroyEl.checked = false;
+      }
+
     }
 
     formModel.phonesEl.innerHTML = '';
@@ -107,7 +111,10 @@ const CustomerFormHelper = (() => {
     formModel.parentPhoneIdEl.value = '';
     formModel.parentPhoneCodeEl.value = '';
     formModel.parentPhoneNumberEl.value = '';
-    formModel.parentDestroyEl.checked = false;
+    
+    if(formModel.parentDestroyEl){
+      formModel.parentDestroyEl.checked = false;
+    }
 
     formModel.phonesEl.innerHTML = '';
     formModel.emailsEl.innerHTML = '';
