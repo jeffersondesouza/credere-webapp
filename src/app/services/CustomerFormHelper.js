@@ -12,7 +12,7 @@ const CustomerFormHelper = (() => {
       city: formModel.cityEl.value,
       phones: FormContactsUtils.getPhonesList(formModel.phonesEl),
       emails: FormContactsUtils.getEmailList(formModel.emailsEl),
-      parent: { 
+      parent: {
         name: formModel.parentNameEl.value,
         phone: {
           code: formModel.parentPhoneCodeEl.value,
@@ -41,7 +41,9 @@ const CustomerFormHelper = (() => {
       parent: {
         id: formModel.parentIdEl.value,
         name: formModel.parentNameEl.value,
-        destroy: formModel.parentDestroyEl.checked,
+
+        destroy: (formModel.parentDestroyEl) ? formModel.parentDestroyEl.checked : false,
+
         phone: {
           id: formModel.parentPhoneIdEl.value,
           code: formModel.parentPhoneCodeEl.value,
@@ -81,8 +83,8 @@ const CustomerFormHelper = (() => {
       formModel.parentPhoneIdEl.value = editingUser.parent.phone.id;
       formModel.parentPhoneCodeEl.value = editingUser.parent.phone.code;
       formModel.parentPhoneNumberEl.value = editingUser.parent.phone.number;
-      
-      if(formModel.parentDestroyEl){
+
+      if (formModel.parentDestroyEl) {
         formModel.parentDestroyEl.checked = false;
       }
 
@@ -111,8 +113,8 @@ const CustomerFormHelper = (() => {
     formModel.parentPhoneIdEl.value = '';
     formModel.parentPhoneCodeEl.value = '';
     formModel.parentPhoneNumberEl.value = '';
-    
-    if(formModel.parentDestroyEl){
+
+    if (formModel.parentDestroyEl) {
       formModel.parentDestroyEl.checked = false;
     }
 
