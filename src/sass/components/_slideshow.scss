@@ -1,15 +1,29 @@
 .slideshow {
-  background: $white;
-  height: 50vh;
+  position: relative;
+  background: $grey-light-2;
   padding: 0 20rem;
+  z-index: 1000;
+  
+  
+  display: flex;
+
   &__layout {
-    height: 100%;
+    height: 60vh;
+    background: $white; // position: absolute;
+    top: 0;
+    left: 0;
+    
+    flex: 1;
   }
   &__body {
     padding: 2rem 5rem;
   }
-  &__figure {}
-  &__figure-img {}
+  &__figure {
+    height: 100%;
+  }
+  &__figure-img {
+    height: 100%;
+  }
   &__title {
     font-size: 4rem;
     color: $secondary-color-dark;
@@ -40,7 +54,7 @@
     cursor: pointer;
     font-size: 1.5rem;
     font-weight: 600;
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1.5rem;
     outline: none;
     border-bottom: 1.5px solid rgba($secondary-color-dark, .5);
     &:hover {
@@ -49,6 +63,19 @@
     &:active {
       border-bottom: none;
     }
+  }
+  &__check {
+    position: absolute;
+  }
+  &__check:checked+.slideshow__layout,
+  &__check:checked+.slideshow__layout--1 {
+    background: pink;
+    display: flex;
+
+  }
+  &__check:not(:checked)+.slideshow__layout {
+    background: red;
+    display: none;
   }
 }
 
