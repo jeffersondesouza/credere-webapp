@@ -127,43 +127,42 @@
 .slideshow__layout--2 {
   height: 60vh;
   position: relative;
+  flex: 1;
   .slideshow__figure {
     height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
   }
   .slideshow__figure-img {
     height: 100%;
+    width: 100%;
+
   }
   .slideshow__content {
     padding: 1rem 1.5rem 0 0;
     align-self: stretch;
-    background: $white;
     display: flex;
+    flex: 1;
     flex-direction: column;
   }
   .slideshow__body {
     padding: 2rem 5rem;
-    flex: 1;
     background: lightblue;
   }
   .slideshow__title {
-    font-size: 4rem;
     color: $secondary-color-dark;
     margin-bottom: 1rem;
     background: lightcoral;
   }
   .slideshow__subtitle {
-    color: $grey-dark;
-    font-weight: 300;
+    color: $secondary-color-dark;
+    font-weight: 400;
     font-size: 1.75rem;
-    margin-bottom: 2rem;
     background: lightcyan;
   }
   .slideshow__paragraph {
-    color: $grey-dark-3;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    background: lightgray;
+    display: none;
   }
   .slideshow__footer {
     align-items: center;
