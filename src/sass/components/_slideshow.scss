@@ -1,18 +1,34 @@
+@keyframes moveRight {
+  0% {
+    transform: translateX(100rem);
+  }
+  100% {
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-500rem);
+  }
+  100% {
+    transform: translateX(-1000rem);
+  }
+}
+
 .slideshow {
   position: relative;
   background: $grey-light-2;
   padding: 0 20rem;
   z-index: 1000;
-  
-  
   display: flex;
-
   &__layout {
     height: 60vh;
     background: $white; // position: absolute;
     top: 0;
     left: 0;
-    
     flex: 1;
   }
   &__body {
@@ -66,15 +82,21 @@
   }
   &__check {
     position: absolute;
+    visibility: hidden;
   }
   &__check:checked+.slideshow__layout,
-  &__check:checked+.slideshow__layout--1 {
+  &__check:checked+[class^="slideshow__layout--"] {
     background: pink;
     display: flex;
-
+    flex: 1 0 100%;
+    animation: moveRight .5s ease-in;
+    // animation: moveLeft 1s ease-in;
   }
-  &__check:not(:checked)+.slideshow__layout {
+  &__check:not(:checked)+.slideshow__layout,
+  &__check:checked+[class^="slideshow__layout--"] {
     background: red;
+    transform: translateX(10rem);
+    visibility: hidden;
     display: none;
   }
 }
