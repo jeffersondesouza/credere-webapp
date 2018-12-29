@@ -2,14 +2,11 @@
   0% {
     transform: translateX(100rem);
   }
-  100% {
-  }
+  100% {}
 }
 
 @keyframes moveLeft {
-  0% {
-    transform: translateX(0);
-  }
+  0% {}
   50% {
     transform: translateX(-500rem);
   }
@@ -86,16 +83,12 @@
   }
   &__check:checked+.slideshow__layout,
   &__check:checked+[class^="slideshow__layout--"] {
-    background: pink;
     display: flex;
     flex: 1 0 100%;
     animation: moveRight .5s ease-in;
-    // animation: moveLeft 1s ease-in;
   }
   &__check:not(:checked)+.slideshow__layout,
-  &__check:checked+[class^="slideshow__layout--"] {
-    background: red;
-    transform: translateX(10rem);
+  &__check:not(:checked)+[class^="slideshow__layout--"] {
     visibility: hidden;
     display: none;
   }
