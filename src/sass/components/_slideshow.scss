@@ -35,11 +35,20 @@
   &__button {
     border: none;
     background-color: $primary-color;
+    border-radius: 5px;
     color: $white;
+    cursor: pointer;
     font-size: 1.5rem;
     font-weight: 600;
     padding: 1.25rem 1.5rem;
     outline: none;
+    border-bottom: 1.5px solid rgba($secondary-color-dark, .5);
+    &:hover {
+      border-bottom: 4px solid rgba($secondary-color-dark, .5);
+    }
+    &:active {
+      border-bottom: none;
+    }
   }
 }
 

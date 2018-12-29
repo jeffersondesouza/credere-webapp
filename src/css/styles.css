@@ -1141,11 +1141,18 @@ body {
   .slideshow__button {
     border: none;
     background-color: #4ec498;
+    border-radius: 5px;
     color: #fff;
+    cursor: pointer;
     font-size: 1.5rem;
     font-weight: 600;
     padding: 1.25rem 1.5rem;
-    outline: none; }
+    outline: none;
+    border-bottom: 1.5px solid rgba(28, 36, 59, 0.5); }
+    .slideshow__button:hover {
+      border-bottom: 4px solid rgba(28, 36, 59, 0.5); }
+    .slideshow__button:active {
+      border-bottom: none; }
 
 .slideshow__layout--1 {
   display: flex; }
