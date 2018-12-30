@@ -9,7 +9,8 @@
     "build": "gulp default",
     "test": "xdg-open tests/SpecRunner.html",
     "test:w": "gulp test-w",
-    "start": "gulp server"
+    "start": "gulp server",
+    "deploy":"npm run build && firebase deploy"
   },
   "author": "jefferson desouza",
   "license": "ISC",
