@@ -1,7 +1,9 @@
 const HttpService = (() => {
 
   const xhr = new XMLHttpRequest();
-  const baseUrl = 'http://localhost:3000';
+  // const baseUrl = 'http://localhost:3000';
+  const baseUrl = 'https://credere-api-2.herokuapp.com';
+  
 
   function get(path) {
     return new Promise((resolve, reject) => {
