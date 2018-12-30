@@ -1,13 +1,16 @@
 (function () {
+  /* Slide show */
+  SlideshowView({ selector: '#slideshow', data: slideShowData }).buildSlideShow()
 
+
+  /* Aplication */
   const appViewController = AppViewController({
     formController: FormController('#form-view'),
-    customersListController:CustomersListController('#customers-view')
+    customersListController: CustomersListController('#customers-view')
   });
 
-  
-  const customerController = CustomerController();
 
+  const customerController = CustomerController();
 
   appViewController
     .onInit(customerController.getAllCustomers);
@@ -21,5 +24,6 @@
 
   appViewController
     .onSendToEdit(customerController.getEditingCustomer);
+
 
 })();
