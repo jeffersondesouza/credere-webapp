@@ -4,6 +4,7 @@ const HttpService = (() => {
   // const baseUrl = 'http://localhost:3000';
   const baseUrl = 'https://credere-api-2.herokuapp.com';
   
+  
 
   function get(path) {
     return new Promise((resolve, reject) => {
