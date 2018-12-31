@@ -1,7 +1,8 @@
 ## CREDERE
 
-### Versão da aplicação desenvolvida sem uso de frameworks defornt end 
+### Versão da aplicação desenvolvida sem uso de frameworks frontend 
 
+[LINK](https://credere-desafio.firebaseapp.com/)
 
 #### Instalar as dependências
 ``npm install``
@@ -21,3 +22,7 @@
 
 #### Fazer o deploy da aplicação 
 ``npm run deploy``
+
+
+### API REST
+IMPORTANTE! Lembre-se de rodar a [API](https://github.com/jeffersondesouza/credere-api) rest da aplicação
